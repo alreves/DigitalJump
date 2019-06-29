@@ -5,14 +5,14 @@
 }
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Название</a>
+        <a class="navbar-brand" href="#">Unicall</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Главная <span class="sr-only">(текущий)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Раздел</a>
@@ -111,5 +111,38 @@
         </div>
     </div>
     <div class="container">
+        @{ 
+            foreach(var vac in Model.HotVacancies.Where(p => p.IsActive).ToList())
+            {
+                var price = "";
+                if (vac.MinWage > 0 && vac.MaxWage > 0)
+                {
+                    price = vac.MinWage + " - " + vac.MaxWage;
+                }
+                else if (vac.MinWage > 0 && vac.MaxWage == 0)
+                {
+                    price = "от " + vac.MinWage;
+                }
+                else if (vac.MinWage == 0 && vac.MaxWage > 0)
+                {
+                    price = "до " + vac.MaxWage;
+                }
+                <div class="vac">
+                    <div class="name-price">
+                        <a class="name" href="#">@vac.Name</a>
+                        <span class="price">@price</span>
+                    </div>
+                    <div class="org">
+                        <a href="#">@vac.Organization</a>
+                    </div>
+                    <div class="loc">
+                        <a href="#">@vac.Locality</a>
+                    </div>
+                    <p class="descr">
+                        @vac.Description
+                    </p>
+                </div>
+            }
+        }
     </div>
 </main>

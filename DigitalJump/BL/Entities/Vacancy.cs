@@ -5,10 +5,7 @@ namespace DigitalJump.BL.Entities
     public class Vacancy
     {
         [JsonProperty("GUID")]
-        public string Uid
-        {
-            get; set;
-        }
+        public string Uid { get; set; }
 
         [JsonProperty("НаселенныйПункт")]
         public string Locality { get; set; }
@@ -39,5 +36,8 @@ namespace DigitalJump.BL.Entities
 
         [JsonProperty("Активная")]
         public bool IsActive { get; set; }
+
+        [JsonProperty("Наименование")]
+        public string Name { get; set; }
     }
 }
