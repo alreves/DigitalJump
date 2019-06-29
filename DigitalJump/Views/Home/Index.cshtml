@@ -5,97 +5,111 @@
 }
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Carousel</a>
+        <a class="navbar-brand" href="#">Название</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="#">Раздел</a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 </header>
 <main role="main" class="pb-3">
-    <div class="stats-information">
-        <span>Резюме на практику: @Model.MainStat.ResumePractic</span>
-        <br />
-        <span>Всего резюме: @Model.MainStat.AllResume</span>
-        <br />
-        <span>Вакансии на практику: @Model.MainStat.VacancyPractic</span>
-        <br />
-        <span>Вакансии всего: @Model.MainStat.AllVacancy</span>
+    <div class="header">
+        <div class="header-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span>Резюме на практику: @Model.MainStat.ResumePractic</span>
+                        <br />
+                        <span>Всего резюме: @Model.MainStat.AllResume</span>
+                        <br />
+                        <span>Вакансии на практику: @Model.MainStat.VacancyPractic</span>
+                        <br />
+                        <span>Вакансии всего: @Model.MainStat.AllVacancy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-search-line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="p-relative text-right">
+                            <div class="small-logo" id="smallLogo"></div>
+                            <div class="input-group" id="searchInputGroup">
+                                <input type="text" class="form-control" id="searchLine" placeholder="Поиск..." aria-label="Партнёр, Договор, ИНН, ОРГН...">
+                                <span class="input-group-append">
+                                    <button class="btn btn-success search font-size-none" id="searchBtn" type="button"></button>
+                                </span>
+                            </div>
+                            <div class="sub-search p-absolute d-none text-left" id="subSearchVariants">
+                                <div class="loader p-absolute"></div>
+                            </div>
+                        </div>
+                        <div class="text-right font-size-none">
+                            <a class="btn btn-link btn-sm d-inline-block text-right" id="additionalSearchBtn" data-status="off" data-toggle="collapse" href="#additionalSearchFilters" aria-expanded="false" aria-controls="additionalSearchFilters">
+                                Расширенный поиск
+                            </a>
+                        </div>
+                        <div class="collapse" id="additionalSearchFilters">
+                            <div class="card card-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-2">
+                                            <label for="inputPeriodFrom" class="col-form-label">Период от</label>
+                                            <input type="date" class="form-control" id="inputPeriodFrom">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputPeriodTo" class="col-form-label">Период до</label>
+                                            <input type="date" class="form-control" id="inputPeriodTo">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputSubdivision" class="col-form-label">Подразделение</label>
+                                            <select id="inputSubdivision" class="form-control custom-select">
+                                                <option selected>Выберите...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPartner" class="col-form-label">Наименование партнера</label>
+                                            <input type="text" class="form-control" id="inputPartner" placeholder="Партнер">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputContract" class="col-form-label">Номер договора</label>
+                                            <input type="text" class="form-control" id="inputContract" placeholder="Договор">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputINN" class="col-form-label">ИНН</label>
+                                            <input type="text" class="form-control" id="inputINN" placeholder="ИНН">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputOGRN" class="col-form-label">ОГРН</label>
+                                            <input type="text" class="form-control" id="inputOGRN" placeholder="ОГРН">
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <button type="submit" class="btn btn-success">Найти</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="container marketing">
-        <div class="row">
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2>Heading</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-        </div>
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
+    <div class="container">
     </div>
 </main>
