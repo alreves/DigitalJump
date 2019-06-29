@@ -1,4 +1,6 @@
-﻿@{
+﻿@model HomeViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <header>
@@ -28,6 +30,13 @@
 </header>
 <main role="main" class="pb-3">
     <div class="stats-information">
+        <span>Резюме на практику: @Model.MainStat.ResumePractic</span>
+        <br />
+        <span>Всего резюме: @Model.MainStat.AllResume</span>
+        <br />
+        <span>Вакансии на практику: @Model.MainStat.VacancyPractic</span>
+        <br />
+        <span>Вакансии всего: @Model.MainStat.AllVacancy</span>
     </div>
 
     <div class="container marketing">
