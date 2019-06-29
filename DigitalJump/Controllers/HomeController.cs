@@ -10,10 +10,15 @@ namespace DigitalJump.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            StatProvider statProvider = new StatProvider ();
-            var result = await statProvider.GetStatAsync();
+            StatProvider statProvider = new StatProvider();
+            var mainStat = await statProvider.GetStatAsync();
 
-            return View();
+            HomeViewModel model = new HomeViewModel()
+            {
+                MainStat = mainStat
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()
