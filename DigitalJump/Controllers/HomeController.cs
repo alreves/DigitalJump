@@ -1,13 +1,18 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DigitalJump.Models;
+using DigitalJump.BL;
+using System.Threading.Tasks;
 
 namespace DigitalJump.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            StatProvider statProvider = new StatProvider ();
+            var result = await statProvider.GetStatAsync();
+
             return View();
         }
 
