@@ -40,7 +40,14 @@ html {
   position: relative;
   min-height: 100%;
 }
-
+header {
+    padding-bottom:56px;
+}
+.stats-information {
+    background-color: #dadada;
+    height: 300px;
+    margin-bottom: 50px;
+}
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
