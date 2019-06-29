@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DigitalJump.BL;
 
 namespace DigitalJump.Models
 {
     public class HomeViewModel
     {
+        public MainStat MainStat { get; set; }
     }
 }
