@@ -1,5 +1,4 @@
-﻿using DigitalJump.BL;
-using DigitalJump.BL.Entities;
+﻿using DigitalJump.BL.Entities;
 using System.Collections.Generic;
 
 namespace DigitalJump.Models
