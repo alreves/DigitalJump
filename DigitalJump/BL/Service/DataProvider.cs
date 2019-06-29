@@ -2,11 +2,11 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace DigitalJump.BL
+namespace DigitalJump.BL.Service
 {
     public class DataProvider
     {
-        private const string ServerUrl = "http://luca/digitalsadygov/hs/hrdata/";
+        private const string ServerUrl = "http://luca/digitalpavlov/hs/hrdata/";
 
         private HttpClient _client = new HttpClient();
 

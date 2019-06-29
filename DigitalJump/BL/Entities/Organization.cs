@@ -1,4 +1,4 @@
-﻿namespace DigitalJump.BL
+﻿namespace DigitalJump.BL.Entities
 {
     public class Organization
     {

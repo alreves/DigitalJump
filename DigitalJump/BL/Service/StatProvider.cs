@@ -1,20 +1,11 @@
-﻿using System.Net.Http;
+﻿using DigitalJump.BL.Entities;
+using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace DigitalJump.BL
+namespace DigitalJump.BL.Service
 {
-    public class StatProvider
+    public class StatProvider: ProviderBase
     {
-        private DataProvider Provider
-        {
-            get; set;
-        }
-
-        public StatProvider()
-        {
-            Provider = new DataProvider();
-        }
-
         public async Task<MainStat> GetStatAsync()
         {
             var url = "stat";

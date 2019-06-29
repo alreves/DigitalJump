@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DigitalJump.BL
+namespace DigitalJump.BL.Entities
 {
     public class Candidate
     {

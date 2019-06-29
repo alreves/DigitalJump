@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DigitalJump.BL
+namespace DigitalJump.BL.Entities
 {
     public class Work
     {

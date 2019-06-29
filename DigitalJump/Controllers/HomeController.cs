@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DigitalJump.Models;
-using DigitalJump.BL;
+using DigitalJump.BL.Service;
 using System.Threading.Tasks;
 
 namespace DigitalJump.Controllers
