@@ -122,11 +122,11 @@
                 foreach (var vac in Model.HotVacancies.Where(p => p.IsActive).ToList())
                 {
                     var price = "";
-                    if (vac.MinWage > 0 && vac.MaxWage > 0)
+                    if (vac.MinWage > 0 && vac.MaxWage > 0 && !vac.IsPractic)
                     {
                         price = vac.MinWage + " - " + vac.MaxWage + " руб.";
                     }
-                    else if (vac.MinWage > 0 && vac.MaxWage == 0)
+                    else if (vac.MinWage > 0 && vac.MaxWage == 0 && !vac.IsPractic)
                     {
                         price = "от " + vac.MinWage + " руб.";
                     }
@@ -147,7 +147,7 @@
 
                     <div class="vac">
                         <div class="name-price">
-                            <a class="name" href="#">@vac.Name</a>
+                            <a class="name" href="/@vac.Uid">@vac.Name</a>
                             <span class="price">@price</span>
                         </div>
                         <div class="org">

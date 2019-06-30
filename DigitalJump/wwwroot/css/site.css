@@ -96,15 +96,14 @@ html {
             text-align: left;
         }
             .header .header-info .logo-col .logo {
-                width: 150px;
+                width: 200px;
                 height: 150px;
-                /* background-image: url(images/logo_small.png); */
+                background-image: url(../images/logo.png);
                 background-position: center left;
                 background-repeat: no-repeat;
-                background-size: contain;
-                display: block;
+                background-size: cover;
                 text-decoration: none;
-                background-color: #fff;
+                background-color: #ffffff38;
                 border-radius: 50%;
                 display: inline-block;
             }
@@ -132,10 +131,10 @@ html {
 .header .main-search-line .small-logo {
   width: 0px;
   height: 0px;
-  /*background-image: url(images/logo_small.png);*/
+  background-image: url(../images/logo.png);
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   position: absolute;
   left: 0;
   top: -500px;
@@ -143,7 +142,7 @@ html {
 }
 .header .main-search-line .small-logo.show {
   width: 90px;
-  height: 70px;
+  height: 65px;
   top: -20px;
 }
 .header .main-search-line .btn.search {
