@@ -39,5 +39,10 @@ namespace DigitalJump.BL.Entities
 
         [JsonProperty("Наименование")]
         public string Name { get; set; }
+
+        [JsonProperty("Адрес")]
+        public string Address { get; set; }
+
+        
     }
 }
