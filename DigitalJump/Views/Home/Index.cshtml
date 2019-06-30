@@ -127,21 +127,25 @@
     </div>
     <div class="container body">
         <div class="vacs">
-            @*@{
+            @{
                 foreach (var vac in Model.HotVacancies.Where(p => p.IsActive).ToList())
                 {
                     var price = "";
                     if (vac.MinWage > 0 && vac.MaxWage > 0)
                     {
-                        price = vac.MinWage + " - " + vac.MaxWage;
+                        price = vac.MinWage + " - " + vac.MaxWage + " руб.";
                     }
                     else if (vac.MinWage > 0 && vac.MaxWage == 0)
                     {
-                        price = "от " + vac.MinWage;
+                        price = "от " + vac.MinWage + " руб.";
                     }
                     else if (vac.MinWage == 0 && vac.MaxWage > 0)
                     {
-                        price = "до " + vac.MaxWage;
+                        price = "до " + vac.MaxWage + " руб.";
+                    }
+                    else
+                    {
+                        price = "Не указана";
                     }
                     <div class="vac">
                         <div class="name-price">
@@ -152,14 +156,14 @@
                             <a href="#">@vac.Organization</a>
                         </div>
                         <div class="loc">
-                            <a href="#">@vac.Locality</a>
+                            <span>@vac.Locality</span>
                         </div>
                         <p class="descr">
                             @vac.Description
                         </p>
                     </div>
                 }
-            }*@
+            }
             <div class="vac">
                 <div class="name-price">
                     <a class="name" href="#">Тестовая работа 1</a>
