@@ -96,15 +96,13 @@ html {
             text-align: left;
         }
             .header .header-info .logo-col .logo {
-                width: 200px;
-                height: 150px;
-                background-image: url(../images/logo.png);
+                width: 250px;
+                height: 200px;
+                background-image: url(../images/logo2.png);
                 background-position: center left;
                 background-repeat: no-repeat;
                 background-size: cover;
                 text-decoration: none;
-                background-color: #ffffff38;
-                border-radius: 50%;
                 display: inline-block;
             }
         .header .header-info .stats-col {
@@ -134,7 +132,7 @@ html {
 .header .main-search-line .small-logo {
   width: 0px;
   height: 0px;
-  background-image: url(../images/logo.png);
+  background-image: url(../images/logo1.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -143,11 +141,11 @@ html {
   top: -500px;
   transition: 0.15s;
 }
-.header .main-search-line .small-logo.show {
-  width: 90px;
-  height: 65px;
-  top: -20px;
-}
+    .header .main-search-line .small-logo.show {
+        width: 90px;
+        height: 80px;
+        top: -18px;
+    }
 .header .main-search-line .btn.search {
   width: 50px;
   border: none;
