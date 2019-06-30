@@ -12,39 +12,13 @@ namespace DigitalJump.BL.Service
         public async Task<List<Vacancy>> GetVacancyAsync()
         {
             var url = "activevacancy";
-
-            var client = Provider.GetClient();
-
-            List<Vacancy> result = null;
-
-            HttpResponseMessage response = await client.GetAsync(url);
-            if (response.IsSuccessStatusCode)
-            {
-                var strResult = await response.Content.ReadAsStringAsync();
-                result = JsonConvert.DeserializeObject<List<Vacancy>>(strResult);
-            }
-
-            return result;
+            return await CallApiOperation<List<Vacancy>>(url);
         }
 
         public async Task<Vacancy> GetVacancyByUidAsync(Guid uid)
         {
             var url = "vacancydata/" + uid.ToString();
-
-            var client = Provider.GetClient();
-
-            Vacancy result = null;
-
-            HttpResponseMessage response = await client.GetAsync(url);
-            if (response.IsSuccessStatusCode)
-            {
-                var strResult = await response.Content.ReadAsStringAsync();
-                result = JsonConvert.DeserializeObject<Vacancy>(strResult);
-            }
-
-            return result;
-        }
-
-        
+            return await CallApiOperation<Vacancy>(url);
+        }        
     }
 }

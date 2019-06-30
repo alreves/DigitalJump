@@ -9,19 +9,7 @@ namespace DigitalJump.BL.Service
         public async Task<MainStat> GetStatAsync()
         {
             var url = "stat";
-
-            var client = Provider.GetClient();
-
-            MainStat result = null;
-
-            HttpResponseMessage response = await client.GetAsync(url);
-            if (response.IsSuccessStatusCode)
-            {
-                var strResult = await response.Content.ReadAsStringAsync();
-                result = Newtonsoft.Json.JsonConvert.DeserializeObject<MainStat>(strResult);
-            }
-
-            return result;
+            return await CallApiOperation<MainStat>(url);
         }
     }
 }

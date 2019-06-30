@@ -145,22 +145,24 @@
                         vacType = "Практика";
                     }
 
-                    <div class="vac">
-                        <div class="name-price">
-                            <a class="name" href="vacancy/@vac.Uid">@vac.Name</a>
-                            <span class="price">@price</span>
+                        <div class="vac">
+                            @Html.ActionLink("12", "Index", "Vacancy", new { uid = vac.Uid })
+
+                            <div class="name-price">
+                                <a class="name" href="vacancy/@vac.Uid">@vac.Name</a>
+                                <span class="price">@price</span>
+                            </div>
+                            <div class="org">
+                                <a href="#">@vac.Organization</a>
+                            </div>
+                            <div class="loc">
+                                <span>@vac.Locality</span>
+                            </div>
+                            <p class="descr">
+                                @vac.Description
+                            </p>
+                            <span class="badge badge-info">@vacType</span>
                         </div>
-                        <div class="org">
-                            <a href="#">@vac.Organization</a>
-                        </div>
-                        <div class="loc">
-                            <span>@vac.Locality</span>
-                        </div>
-                        <p class="descr">
-                            @vac.Description
-                        </p>
-                        <span class="badge badge-info">@vacType</span>
-                    </div>
                 }
             }
         </div>

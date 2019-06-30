@@ -12,7 +12,7 @@ namespace DigitalJump.Controllers
     {
         public async Task<IActionResult> Index(string uid)
         {
-            HomeViewModel model = new HomeViewModel();
+            VacancyModel model = new VacancyModel();
 
             VacancyProvider vacancyProvider = new VacancyProvider();
             var curVac = await vacancyProvider.GetVacancyByUidAsync(new Guid(uid));
