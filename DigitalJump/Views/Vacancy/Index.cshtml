@@ -4,5 +4,72 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Unicall</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Главная <span class="sr-only">(текущий)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Раздел</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main role="main" class="pb-3">
+    <div class="container body">
+        <div class="vacs">
+            @{
+                var vac = Model.CurrentVacancy;
+                var price = "";
+                if (vac.MinWage > 0 && vac.MaxWage > 0 && !vac.IsPractic)
+                {
+                    price = vac.MinWage + " - " + vac.MaxWage + " руб.";
+                }
+                else if (vac.MinWage > 0 && vac.MaxWage == 0 && !vac.IsPractic)
+                {
+                    price = "от " + vac.MinWage + " руб.";
+                }
+                else if (vac.MinWage == 0 && vac.MaxWage > 0)
+                {
+                    price = "до " + vac.MaxWage + " руб.";
+                }
+                else
+                {
+                    price = "Не указана";
+                }
+
+                var vacType = "Работа";
+                if (vac.IsPractic)
+                {
+                    vacType = "Практика";
+                }
+
+                <div class="vac">
+                    <div class="name-price">
+                        <span class="name">@vac.Name</span>
+                        <span class="price">@price</span>
+                    </div>
+                    <div class="org">
+                        <a href="#">@vac.Organization</a>
+                    </div>
+                    <div class="loc">
+                        <span>@vac.Locality</span>
+                    </div>
+                    <p class="descr">
+                        @vac.Description
+                    </p>
+                    <span class="badge badge-info">@vacType</span>
+                </div>
+            }
+        </div>
+    </div>
+</main>
+
 
