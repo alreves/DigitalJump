@@ -288,12 +288,26 @@ body {
 
 /*User profile*/
 .divider {
-    height: 1px;
     width: 100%;
     display: block; /* for use on default inline elements like span */
     margin: 9px 0;
     overflow: hidden;
-    background-color: #e5e5e5;
+    border-bottom: solid 1px #28a745;
+}
+
+.block-with-margin-top {
+    margin-top: 20px;
+}
+
+.span-gray {
+    color: #28a745;
+}
+
+.user-profile {
+    margin-top: 40px;
+}
+
+.user-rating {
 }
 
 .user-profile-contact-data {
@@ -302,3 +316,8 @@ body {
     .user-profile-contact-data tr {
         height: 45px;
     }
+
+.user-profile-skills ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
