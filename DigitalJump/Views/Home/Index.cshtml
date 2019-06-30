@@ -4,23 +4,9 @@
     ViewData["Title"] = "Главная страница";
 }
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Unicall</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Главная <span class="sr-only">(текущий)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Раздел</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    @await Html.PartialAsync("TopMenu")
 </header>
+
 <main role="main" class="pb-3">
     <div class="header">
         <div class="header-info">
@@ -145,24 +131,24 @@
                         vacType = "Практика";
                     }
 
-                        <div class="vac">
-                            @Html.ActionLink("12", "Index", "Vacancy", new { uid = vac.Uid })
+                    <div class="vac">
+                        @Html.ActionLink("12", "Index", "Vacancy", new { uid = vac.Uid })
 
-                            <div class="name-price">
-                                <a class="name" href="vacancy/@vac.Uid">@vac.Name</a>
-                                <span class="price">@price</span>
-                            </div>
-                            <div class="org">
-                                <a href="#">@vac.Organization</a>
-                            </div>
-                            <div class="loc">
-                                <span>@vac.Locality</span>
-                            </div>
-                            <p class="descr">
-                                @vac.Description
-                            </p>
-                            <span class="badge badge-info">@vacType</span>
+                        <div class="name-price">
+                            <a class="name" href="vacancy/@vac.Uid">@vac.Name</a>
+                            <span class="price">@price</span>
                         </div>
+                        <div class="org">
+                            <a href="#">@vac.Organization</a>
+                        </div>
+                        <div class="loc">
+                            <span>@vac.Locality</span>
+                        </div>
+                        <p class="descr">
+                            @vac.Description
+                        </p>
+                        <span class="badge badge-info">@vacType</span>
+                    </div>
                 }
             }
         </div>
