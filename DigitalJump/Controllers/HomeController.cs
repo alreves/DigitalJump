@@ -13,7 +13,7 @@ namespace DigitalJump.Controllers
         public async Task<IActionResult> Index()
         {
             HomeViewModel model = new HomeViewModel();
-                       
+
             StatProvider statProvider = new StatProvider();
             model.MainStat = await statProvider.GetStatAsync();
 

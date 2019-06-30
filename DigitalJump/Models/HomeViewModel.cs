@@ -8,5 +8,7 @@ namespace DigitalJump.Models
         public MainStat MainStat { get; set; }
 
         public List<Vacancy> HotVacancies { get; set; }
+
+        public Vacancy CurrentVacancy { get; set; }
     }
 }
