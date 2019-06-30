@@ -12,5 +12,10 @@ namespace DigitalJump.Controllers
         {
             return View();
         }
+
+        public IActionResult Analytics()
+        {
+            return View();
+        }
     }
 }
