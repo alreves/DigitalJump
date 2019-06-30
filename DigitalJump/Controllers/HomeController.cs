@@ -1,8 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System.Linq;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DigitalJump.Models;
 using DigitalJump.BL.Service;
 using System.Threading.Tasks;
+using DigitalJump.BL.Entities;
 
 namespace DigitalJump.Controllers
 {
@@ -12,11 +14,12 @@ namespace DigitalJump.Controllers
         {
             HomeViewModel model = new HomeViewModel();
 
-            //StatProvider statProvider = new StatProvider();
-            //model.MainStat = await statProvider.GetStatAsync();
+            StatProvider statProvider = new StatProvider();
+            model.MainStat = await statProvider.GetStatAsync();
 
-            //VacancyProvider vacancyProvider = new VacancyProvider();
-            //model.HotVacancies = await vacancyProvider.GetVacancyAsync();
+            VacancyProvider vacancyProvider = new VacancyProvider();
+            var hotVacancies = await vacancyProvider.GetVacancyAsync();
+            model.HotVacancies = hotVacancies.Take(10).ToList();
 
             return View(model);
         }
