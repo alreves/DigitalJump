@@ -17,7 +17,7 @@
                 Гавриловский П.C.
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="#" class="dropdown-item">Профиль</a>
+                @Html.ActionLink("Профиль", "Index", "Candidate", new { uid = new Guid("f3ceda9b-5b22-4151-bdb1-f1db011463c3") }, new { @class = "dropdown-item" })
                 <a href="#" class="dropdown-item">Избранное</a>
                 <a href="#" class="dropdown-item">Выйти</a>
             </div>

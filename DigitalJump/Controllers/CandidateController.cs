@@ -8,7 +8,7 @@ namespace DigitalJump.Controllers
 {
     public class CandidateController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(Guid uid)
         {
             return View();
         }
