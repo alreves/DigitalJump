@@ -1,14 +1,106 @@
 ﻿@{
-    ViewData["Title"] = "Моя организация";
+    ViewData["Title"] = "Кандидаты";
 }
 
-<h1>Моя организация</h1>
+<header>
+    @await Html.PartialAsync("TopMenu")
+</header>
+<main role="main" class="pb-3">
+    <div class="header">
+        <div class="header-info">
+            <div class="mask"></div>
+            <div class="container">
+                <div class="logo-stats row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xs-6 logo-col">
+                        <div class="logo"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xs-6 stats-col">
+                        <div class="stats">
+                            <span>Резюме на практику: @Model.MainStat.ResumePractic</span>
+                            <br />
+                            <span>Всего резюме: @Model.MainStat.AllResume</span>
+                            <br />
+                            <span>Вакансии на практику: @Model.MainStat.VacancyPractic</span>
+                            <br />
+                            <span>Вакансии всего: @Model.MainStat.AllVacancy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-search-line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="p-relative text-right">
+                            <div class="small-logo" id="smallLogo"></div>
+                            <div class="input-group" id="searchInputGroup">
+                                <input type="text" class="form-control" id="searchLine" placeholder="Поиск..." aria-label="Поиск...">
+                                <span class="input-group-append">
+                                    <button class="btn btn-success search font-size-none" id="searchBtn" type="button"></button>
+                                </span>
+                            </div>
+                            <div class="sub-search p-absolute d-none text-left" id="subSearchVariants">
+                                <div class="loader p-absolute"></div>
+                            </div>
+                        </div>
+                        <div class="text-right font-size-none">
+                            <a class="btn btn-link btn-sm d-inline-block text-right" id="additionalSearchBtn" data-status="off" data-toggle="collapse" href="#additionalSearchFilters" aria-expanded="false" aria-controls="additionalSearchFilters">
+                                Расширенный поиск
+                            </a>
+                        </div>
+                        <div class="collapse" id="additionalSearchFilters">
+                            <div class="card card-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-secondary active">
+                                                <input type="radio" name="options" id="Practic" autocomplete="off" checked> Практика
+                                            </label>
+                                            <label class="btn btn-secondary">
+                                                <input type="radio" name="options" id="Work" autocomplete="off"> Работа
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-2">
+                                            <label for="inputPriceFrom" class="col-form-label">Зарплата от</label>
+                                            <input type="text" class="form-control" id="inputPriceFrom">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputPriceTo" class="col-form-label">Зарплата до</label>
+                                            <input type="text" class="form-control" id="inputPriceTo">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputSubdivision" class="col-form-label">Населённый пункт</label>
+                                            <select id="inputSubdivision" class="form-control custom-select">
+                                                <option selected>Выберите...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputDealArea" class="col-form-label">Сфера (область)</label>
+                                            <input type="text" class="form-control" id="inputDealArea" placeholder="Сфера (область)">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputOrg" class="col-form-label">Организация</label>
+                                            <input type="text" class="form-control" id="inputOrg" placeholder="Организация">
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <button type="submit" class="btn btn-success">Найти</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body">
 
-<ul class="nav justify-content-center">
-    <li class="nav-item">
-        <a class="nav-link active" href="#">Мои стажировки</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Мои вакансии</a>
-    </li>
-</ul>
+    </div>
+</main>

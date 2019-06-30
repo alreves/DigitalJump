@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalJump.Controllers
 {
-    public class VacancyController : Controller
+    public class VacancyViewController : Controller
     {
         public async Task<IActionResult> Index(string uid)
         {
