@@ -1,9 +1,11 @@
-﻿@{
+﻿@model CandidatsViewModel
+
+@{
     ViewData["Title"] = "Кандидаты";
 }
 
 <header>
-    @await Html.PartialAsync("TopMenu")
+    @await Html.PartialAsync("TopMenuOrganization")
 </header>
 <main role="main" class="pb-3">
     <div class="header">
@@ -101,6 +103,67 @@
         </div>
     </div>
     <div class="container body">
+        <div class="vacs">
+            <span class="badge badge-pill badge-primary">Информационные системы и технологии</span>
+            <div class="vac">
+                <div class="name-price">
+                    @Html.ActionLink("Гавриловский Пётр Сергеевич", "Analytics", "Candidate", new { uid = new Guid("f3ceda9b-5b22-4151-bdb1-f1db011463c3") }, new { @class = "name" })
+                    <span class="price">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                </div>
+                <div class="org">
+                    <a href="#">Северный (Арктический) федеральный университет имени М.В. Ломоносова</a>
+                </div>
+                <div class="loc">
+                    <span>Архангельск</span>
+                </div>
+                <br />
+                <span class="badge badge-info">Практика</span>
+            </div>
+            @{
+                foreach (var vac in Model.Candidats.OrderByDescending(v => v.TotalRait).ToList())
+                {
+                    var totalRait = vac.TotalRait / 2;
+                    <div class="vac">
+                        <div class="name-price">
+                            <span class="name">@vac.Name</span>
+                            <span class="price">
+                                @for (var i = 1; i <= 5; i++)
+                                {
+                                    var tmp = i - totalRait;
+                                    var halfStar = (tmp > 0 && tmp < 1);
 
+                                    if (i <= totalRait)
+                                    {
+                                        <i class="fas fa-star"></i>
+                                    }
+                                    else if (halfStar)
+                                    {
+                                        <i class="fas fa-star-half-alt"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-star"></i>
+                                    }
+                                }
+                            </span>
+                        </div>
+                        <div class="org">
+                            <a href="#">@vac.Vuz</a>
+                        </div>
+                        <div class="loc">
+                            <span>Архангельск</span>
+                        </div>
+                        <br />
+                        <span class="badge badge-info">Работа</span>
+                    </div>
+                }
+            }
+        </div>
     </div>
 </main>

@@ -11,13 +11,13 @@ namespace DigitalJump.BL.Entities
 
         public DateTime BirthDate { get; set; }
 
-        public List<Education> Educations { get; set;}
+        public List<Education> Educations { get; set; }
 
         public List<Work> Works { get; set; }
 
         [JsonProperty("SkillsPassport")]
         public double SkillsPassport { get; set; }
-        
+
         [JsonProperty("Сертификаты")]
         public double Serts { get; set; }
 
@@ -26,5 +26,8 @@ namespace DigitalJump.BL.Entities
 
         [JsonProperty("ОбщийРейтинг")]
         public double TotalRait { get; set; }
+
+        [JsonProperty("УчебноеЗаведение")]
+        public string Vuz {get;set;}
     }
 }

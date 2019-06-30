@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DigitalJump.Models
 {
-    public class VacancyModel
+    public class VacancyViewModel
     {
         public Vacancy CurrentVacancy { get; set; }
     }
