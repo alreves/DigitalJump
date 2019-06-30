@@ -2,76 +2,88 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
+
 .p-relative {
-  position: relative;
+    position: relative;
 }
+
 .p-absolute {
-  position: absolute;
+    position: absolute;
 }
+
 .font-size-none {
-  font-size: 0;
+    font-size: 0;
 }
+
 #additionalSearchBtn {
-  padding: 0;
-  margin: 0;
-  padding-bottom: 5px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 5px;
 }
+
 #searchInputGroup {
-  display: inline-flex;
-  transition: 0.2s;
+    display: inline-flex;
+    transition: 0.2s;
 }
-#searchInputGroup.short {
-  width: calc(100% - 95px);
-}
-#searchInputGroup.short + .sub-search {
-  width: calc(100% - 144px);
-  left: 95px;
-}
+
+    #searchInputGroup.short {
+        width: calc(100% - 95px);
+    }
+
+        #searchInputGroup.short + .sub-search {
+            width: calc(100% - 144px);
+            left: 95px;
+        }
+
 #additionalSearchFilters {
-  padding-bottom: 23px;
+    padding-bottom: 23px;
 }
+
 .header {
     background-color: #ffffff;
     border-bottom: 3px solid grey;
 }
+
     .header .header-info {
         height: 300px;
         background-image: url(../images/3u4a5155.jpg);
@@ -81,6 +93,7 @@ html {
         position: relative;
         box-shadow: grey 0 2px 2px;
     }
+
         .header .header-info .mask {
             position: absolute;
             width: 100%;
@@ -89,12 +102,15 @@ html {
             left: 0px;
             background-color: #272727b8;
         }
+
         .header .header-info .logo-stats {
             padding-top: 6%;
         }
+
         .header .header-info .logo-col {
             text-align: left;
         }
+
             .header .header-info .logo-col .logo {
                 width: 200px;
                 height: 150px;
@@ -107,15 +123,18 @@ html {
                 border-radius: 50%;
                 display: inline-block;
             }
+
         .header .header-info .stats-col {
             text-align: right;
         }
+
             .header .header-info .stats-col .stats {
                 display: inline-block;
                 color: #ffffff;
                 text-align: right;
                 font-size: 24px;
             }
+
     .header .main-search-line {
         width: 100%;
         top: 0;
@@ -124,175 +143,219 @@ html {
         background-color: #f3f3f3;
         z-index: 5;
     }
-    .header .main-search-line.fixed-line {
-        position: fixed;
-        border-bottom: 3px solid grey;
-    }
-.header .main-search-line .small-logo {
-  width: 0px;
-  height: 0px;
-  background-image: url(../images/logo.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  left: 0;
-  top: -500px;
-  transition: 0.15s;
-}
-.header .main-search-line .small-logo.show {
-  width: 90px;
-  height: 65px;
-  top: -20px;
-}
-.header .main-search-line .btn.search {
-  width: 50px;
-  border: none;
-  background-image: url(../images/search_icon.svg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 24px;
-}
-.header .main-search-line .sub-search {
-  top: calc(100% - 2px);
-  left: 0;
-  width: calc(100% - 49px);
-  height: 240px;
-  background-color: #ffffff;
-  z-index: 5;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-.header .main-search-line .sub-search .sub-search-line {
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-  background-color: #ffffff;
-  transition: 0.1s;
-  padding: 5px 30px;
-  overflow: hidden;
-  z-index: 6;
-  cursor: pointer;
-}
-.header .main-search-line .sub-search .sub-search-line:hover {
-  background-color: #f1f8ff;
-}
-.header .main-search-line .sub-search .sub-search-line:last-child {
-  border-bottom: none;
-}
-.header .main-search-line .sub-search .sub-search-line p {
-  margin: 0;
-}
-.header .main-search-line .sub-search .sub-search-line .partner {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.header .main-search-line .sub-search .sub-search-line .contract {
-  font-size: 0.8rem;
-}
-.header .main-search-line .sub-search .sub-search-line .subdivision {
-  font-size: 0.7rem;
-  color: #808080;
-  font-style: italic;
-}
-.header .main-search-line .sub-search.load {
-  overflow: hidden !important;
-}
-.header .main-search-line .sub-search.load > .loader {
-  display: block;
-}
-.header .main-search-line .sub-search .loader {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: none;
-  background-image: url(../images/search_loader.gif);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 50px;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.body{
+
+        .header .main-search-line.fixed-line {
+            position: fixed;
+            border-bottom: 3px solid grey;
+        }
+
+        .header .main-search-line .small-logo {
+            width: 0px;
+            height: 0px;
+            background-image: url(../images/logo.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: -500px;
+            transition: 0.15s;
+        }
+
+            .header .main-search-line .small-logo.show {
+                width: 90px;
+                height: 65px;
+                top: -20px;
+            }
+
+        .header .main-search-line .btn.search {
+            width: 50px;
+            border: none;
+            background-image: url(../images/search_icon.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 24px;
+        }
+
+        .header .main-search-line .sub-search {
+            top: calc(100% - 2px);
+            left: 0;
+            width: calc(100% - 49px);
+            height: 240px;
+            background-color: #ffffff;
+            z-index: 5;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+            .header .main-search-line .sub-search .sub-search-line {
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+                background-color: #ffffff;
+                transition: 0.1s;
+                padding: 5px 30px;
+                overflow: hidden;
+                z-index: 6;
+                cursor: pointer;
+            }
+
+                .header .main-search-line .sub-search .sub-search-line:hover {
+                    background-color: #f1f8ff;
+                }
+
+                .header .main-search-line .sub-search .sub-search-line:last-child {
+                    border-bottom: none;
+                }
+
+                .header .main-search-line .sub-search .sub-search-line p {
+                    margin: 0;
+                }
+
+                .header .main-search-line .sub-search .sub-search-line .partner {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+
+                .header .main-search-line .sub-search .sub-search-line .contract {
+                    font-size: 0.8rem;
+                }
+
+                .header .main-search-line .sub-search .sub-search-line .subdivision {
+                    font-size: 0.7rem;
+                    color: #808080;
+                    font-style: italic;
+                }
+
+            .header .main-search-line .sub-search.load {
+                overflow: hidden !important;
+            }
+
+                .header .main-search-line .sub-search.load > .loader {
+                    display: block;
+                }
+
+            .header .main-search-line .sub-search .loader {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: none;
+                background-image: url(../images/search_loader.gif);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: 50px;
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+.body {
     min-height: 500px;
 }
+
     .body.fixed-search {
         padding-top: 89px;
     }
+
     .body .vacs {
         margin: 40px 0;
     }
-    .body .vacs .vac {
-        border: 1px solid #e8e8e8;
-        margin-bottom: 20px;
-        padding: 20px;
-    }
-        .body .vacs .vac .name-price {
-            font-size: 0;
-            margin-bottom: 5px;
-        }
-            .body .vacs .vac .name-price .name {
-                display: inline-block;
-                width: 80%;
-                font-size: 20px;
-                font-weight: bold;
-                color: #28a745;
-                text-decoration: none !important;
-            }
-                .body .vacs .vac .name-price .name:hover {
-                    color: #d23c3c;
-                }
-            .body .vacs .vac .name-price .price {
-                display: inline-block;
-                width: 20%;
-                font-size: 20px;
-                font-weight: bold;
-                text-align: right;
-                color: grey;
-            }
-        .body .vacs .vac .org {
-            line-height: 1.1;
-        }
-            .body .vacs .vac .org a {
-                color: grey;
-                font-size: 14px;
-                text-decoration: none !important;
-            }
-                .body .vacs .vac .org a:hover {
-                    color: #d23c3c;
-                }
-        .body .vacs .vac .loc {
-            line-height: 1.1;
-        }
-            .body .vacs .vac .loc span {
-                color: grey;
-                font-size: 14px;
-            }
-        .body .vacs .vac .descr {
-            margin-top: 12px;
-            line-height: 1.2;
+
+        .body .vacs .vac {
+            border: 1px solid #e8e8e8;
+            margin-bottom: 20px;
+            padding: 20px;
         }
 
+            .body .vacs .vac .name-price {
+                font-size: 0;
+                margin-bottom: 5px;
+            }
+
+                .body .vacs .vac .name-price .name {
+                    display: inline-block;
+                    width: 80%;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #28a745;
+                    text-decoration: none !important;
+                }
+
+                    .body .vacs .vac .name-price .name:hover {
+                        color: #d23c3c;
+                    }
+
+                .body .vacs .vac .name-price .price {
+                    display: inline-block;
+                    width: 20%;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: right;
+                    color: grey;
+                }
+
+            .body .vacs .vac .org {
+                line-height: 1.1;
+            }
+
+                .body .vacs .vac .org a {
+                    color: grey;
+                    font-size: 14px;
+                    text-decoration: none !important;
+                }
+
+                    .body .vacs .vac .org a:hover {
+                        color: #d23c3c;
+                    }
+
+            .body .vacs .vac .loc {
+                line-height: 1.1;
+            }
+
+                .body .vacs .vac .loc span {
+                    color: grey;
+                    font-size: 14px;
+                }
+
+            .body .vacs .vac .descr {
+                margin-top: 12px;
+                line-height: 1.2;
+            }
+
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  height: 60px;
-  line-height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    height: 60px;
+    line-height: 60px;
 }
 
 /*User profile*/
 .divider {
-    height: 1px;
     width: 100%;
     display: block; /* for use on default inline elements like span */
     margin: 9px 0;
     overflow: hidden;
-    background-color: #e5e5e5;
+    border-bottom: solid 1px #28a745;
+}
+
+.block-with-margin-top {
+    margin-top: 20px;
+}
+
+.span-gray {
+    color: #28a745;
+}
+
+.user-profile {
+    margin-top: 40px;
+}
+
+.user-rating {
 }
 
 .user-profile-contact-data {
@@ -301,3 +364,8 @@ body {
     .user-profile-contact-data tr {
         height: 45px;
     }
+
+.user-profile-skills ul{
+    list-style-type: none;
+    padding-left:0px;
+}
