@@ -13,7 +13,7 @@ namespace DigitalJump.Controllers
             return View();
         }
 
-        public IActionResult Analytics()
+        public IActionResult Analytics(Guid uid)
         {
             return View();
         }
