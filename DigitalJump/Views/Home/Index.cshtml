@@ -107,17 +107,20 @@
                 foreach (var vac in Model.HotVacancies.Where(p => p.IsActive).ToList())
                 {
                     var price = "";
+                    var minWage = String.Format("{0:n0}", vac.MinWage);
+                    var maxWage = String.Format("{0:n0}", vac.MaxWage);
+
                     if (vac.MinWage > 0 && vac.MaxWage > 0 && !vac.IsPractic)
                     {
-                        price = vac.MinWage + " - " + vac.MaxWage + " руб.";
+                        price = minWage + " - " + maxWage + " руб.";
                     }
                     else if (vac.MinWage > 0 && vac.MaxWage == 0 && !vac.IsPractic)
                     {
-                        price = "от " + vac.MinWage + " руб.";
+                        price = "от " + minWage + " руб.";
                     }
                     else if (vac.MinWage == 0 && vac.MaxWage > 0)
                     {
-                        price = "до " + vac.MaxWage + " руб.";
+                        price = "до " + maxWage + " руб.";
                     }
                     else
                     {

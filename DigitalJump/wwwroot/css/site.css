@@ -114,8 +114,11 @@ html {
                 display: inline-block;
                 color: #ffffff;
                 text-align: right;
-                font-size: 24px;
+                font-size: 0px;
             }
+                .header .header-info .stats-col .stats span {
+                    font-size: 24px;
+                }
     .header .main-search-line {
         width: 100%;
         top: 0;
