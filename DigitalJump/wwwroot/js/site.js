@@ -48,17 +48,19 @@ $('body').click(function () {
 $(window).scroll(function () {
     var scrollTop = $(this).scrollTop();
 
-    if (scrollTop >= 135) {
+    if (scrollTop >= 356) {
 
         $('#smallLogo').addClass('show');
         $('#searchInputGroup').addClass('short');
         $('.main-search-line').addClass('fixed-line');
+        $('.body').addClass('fixed-search');
 
     } else {
 
         $('#smallLogo').removeClass('show');
         $('#searchInputGroup').removeClass('short');
         $('.main-search-line').removeClass('fixed-line');
+        $('.body').removeClass('fixed-search');
 
     }
 });

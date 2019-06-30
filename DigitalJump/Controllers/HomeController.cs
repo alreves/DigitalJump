@@ -12,11 +12,11 @@ namespace DigitalJump.Controllers
         {
             HomeViewModel model = new HomeViewModel();
 
-            StatProvider statProvider = new StatProvider();
-            model.MainStat = await statProvider.GetStatAsync();
+            //StatProvider statProvider = new StatProvider();
+            //model.MainStat = await statProvider.GetStatAsync();
 
-            VacancyProvider vacancyProvider = new VacancyProvider();
-            model.HotVacancies = await vacancyProvider.GetVacancyAsync();
+            //VacancyProvider vacancyProvider = new VacancyProvider();
+            //model.HotVacancies = await vacancyProvider.GetVacancyAsync();
 
             return View(model);
         }

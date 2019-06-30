@@ -1,10 +1,10 @@
 ﻿@model HomeViewModel
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Главная страница";
 }
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Unicall</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,16 +24,31 @@
 <main role="main" class="pb-3">
     <div class="header">
         <div class="header-info">
+            <div class="mask"></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <span>Резюме на практику: @Model.MainStat.ResumePractic</span>
-                        <br />
-                        <span>Всего резюме: @Model.MainStat.AllResume</span>
-                        <br />
-                        <span>Вакансии на практику: @Model.MainStat.VacancyPractic</span>
-                        <br />
-                        <span>Вакансии всего: @Model.MainStat.AllVacancy</span>
+                <div class="logo-stats row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xs-6 logo-col">
+                        <div class="logo"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xs-6 stats-col">
+                        <div class="stats">
+                            @*
+                            <span>Резюме на практику: @Model.MainStat.ResumePractic</span>
+                            <br />
+                            <span>Всего резюме: @Model.MainStat.AllResume</span>
+                            <br />
+                            <span>Вакансии на практику: @Model.MainStat.VacancyPractic</span>
+                            <br />
+                            <span>Вакансии всего: @Model.MainStat.AllVacancy</span>
+                            *@
+                            <span wfd-id="34">Резюме на практику: 6</span>
+                            <br>
+                            <span wfd-id="33">Всего резюме: 16</span>
+                            <br>
+                            <span wfd-id="32">Вакансии на практику: 10</span>
+                            <br>
+                            <span wfd-id="31">Вакансии всего: 27</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,7 +60,7 @@
                         <div class="p-relative text-right">
                             <div class="small-logo" id="smallLogo"></div>
                             <div class="input-group" id="searchInputGroup">
-                                <input type="text" class="form-control" id="searchLine" placeholder="Поиск..." aria-label="Партнёр, Договор, ИНН, ОРГН...">
+                                <input type="text" class="form-control" id="searchLine" placeholder="Поиск..." aria-label="Поиск...">
                                 <span class="input-group-append">
                                     <button class="btn btn-success search font-size-none" id="searchBtn" type="button"></button>
                                 </span>
@@ -63,18 +78,28 @@
                             <div class="card card-body">
                                 <form>
                                     <div class="form-row">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-secondary active">
+                                                <input type="radio" name="options" id="Practic" autocomplete="off" checked> Практика
+                                            </label>
+                                            <label class="btn btn-secondary">
+                                                <input type="radio" name="options" id="Work" autocomplete="off"> Работа
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
                                         <div class="form-group col-md-2">
-                                            <label for="inputPeriodFrom" class="col-form-label">Период от</label>
-                                            <input type="date" class="form-control" id="inputPeriodFrom">
+                                            <label for="inputPriceFrom" class="col-form-label">Зарплата от</label>
+                                            <input type="text" class="form-control" id="inputPriceFrom">
                                         </div>
                                         <div class="form-group col-md-2">
-                                            <label for="inputPeriodTo" class="col-form-label">Период до</label>
-                                            <input type="date" class="form-control" id="inputPeriodTo">
+                                            <label for="inputPriceTo" class="col-form-label">Зарплата до</label>
+                                            <input type="text" class="form-control" id="inputPriceTo">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
-                                            <label for="inputSubdivision" class="col-form-label">Подразделение</label>
+                                            <label for="inputSubdivision" class="col-form-label">Населённый пункт</label>
                                             <select id="inputSubdivision" class="form-control custom-select">
                                                 <option selected>Выберите...</option>
                                             </select>
@@ -82,22 +107,12 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputPartner" class="col-form-label">Наименование партнера</label>
-                                            <input type="text" class="form-control" id="inputPartner" placeholder="Партнер">
+                                            <label for="inputDealArea" class="col-form-label">Сфера (область)</label>
+                                            <input type="text" class="form-control" id="inputDealArea" placeholder="Сфера (область)">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputContract" class="col-form-label">Номер договора</label>
-                                            <input type="text" class="form-control" id="inputContract" placeholder="Договор">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputINN" class="col-form-label">ИНН</label>
-                                            <input type="text" class="form-control" id="inputINN" placeholder="ИНН">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputOGRN" class="col-form-label">ОГРН</label>
-                                            <input type="text" class="form-control" id="inputOGRN" placeholder="ОГРН">
+                                            <label for="inputOrg" class="col-form-label">Организация</label>
+                                            <input type="text" class="form-control" id="inputOrg" placeholder="Организация">
                                         </div>
                                     </div>
                                     <br />
@@ -110,39 +125,71 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        @{ 
-            foreach(var vac in Model.HotVacancies.Where(p => p.IsActive).ToList())
-            {
-                var price = "";
-                if (vac.MinWage > 0 && vac.MaxWage > 0)
+    <div class="container body">
+        <div class="vacs">
+            @*@{
+                foreach (var vac in Model.HotVacancies.Where(p => p.IsActive).ToList())
                 {
-                    price = vac.MinWage + " - " + vac.MaxWage;
-                }
-                else if (vac.MinWage > 0 && vac.MaxWage == 0)
-                {
-                    price = "от " + vac.MinWage;
-                }
-                else if (vac.MinWage == 0 && vac.MaxWage > 0)
-                {
-                    price = "до " + vac.MaxWage;
-                }
-                <div class="vac">
-                    <div class="name-price">
-                        <a class="name" href="#">@vac.Name</a>
-                        <span class="price">@price</span>
+                    var price = "";
+                    if (vac.MinWage > 0 && vac.MaxWage > 0)
+                    {
+                        price = vac.MinWage + " - " + vac.MaxWage;
+                    }
+                    else if (vac.MinWage > 0 && vac.MaxWage == 0)
+                    {
+                        price = "от " + vac.MinWage;
+                    }
+                    else if (vac.MinWage == 0 && vac.MaxWage > 0)
+                    {
+                        price = "до " + vac.MaxWage;
+                    }
+                    <div class="vac">
+                        <div class="name-price">
+                            <a class="name" href="#">@vac.Name</a>
+                            <span class="price">@price</span>
+                        </div>
+                        <div class="org">
+                            <a href="#">@vac.Organization</a>
+                        </div>
+                        <div class="loc">
+                            <a href="#">@vac.Locality</a>
+                        </div>
+                        <p class="descr">
+                            @vac.Description
+                        </p>
                     </div>
-                    <div class="org">
-                        <a href="#">@vac.Organization</a>
-                    </div>
-                    <div class="loc">
-                        <a href="#">@vac.Locality</a>
-                    </div>
-                    <p class="descr">
-                        @vac.Description
-                    </p>
+                }
+            }*@
+            <div class="vac">
+                <div class="name-price">
+                    <a class="name" href="#">Тестовая работа 1</a>
+                    <span class="price">5000 - 45000 руб.</span>
                 </div>
-            }
-        }
+                <div class="org">
+                    <a href="#">МБОУ СОШ №20 имени Бурюханова Т.М.</a>
+                </div>
+                <div class="loc">
+                    <span>Архангельск</span>
+                </div>
+                <p class="descr">
+                    Тут может быть самое любое описание которое только взбредет мне в голову. Так же тут могут быть описаны возможности, которых вы можете добиться работая в нашем коллективе. Ну и будет не лишним сказать про быстрый карьерный рост и прочее прочее прочее...
+                </p>
+            </div>
+            <div class="vac">
+                <div class="name-price">
+                    <a class="name" href="#">Тестовая работа 2</a>
+                    <span class="price">от 70000 руб.</span>
+                </div>
+                <div class="org">
+                    <a href="#">Государственное бюджетное учреждение здравоохранения Архангельской области «Архангельская областная клиническая больница»</a>
+                </div>
+                <div class="loc">
+                    <span>Вельск</span>
+                </div>
+                <p class="descr">
+                    Тут может быть самое любое описание которое только взбредет мне в голову. Так же тут могут быть описаны возможности, которых вы можете добиться работая в нашем коллективе. Ну и будет не лишним сказать про быстрый карьерный рост и прочее прочее прочее...
+                </p>
+            </div>
+        </div>
     </div>
 </main>
