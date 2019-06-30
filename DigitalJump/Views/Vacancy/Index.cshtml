@@ -1,7 +1,7 @@
 ﻿@model VacancyViewModel
 
 @{
-    ViewData["Title"] = "Вакансии";
+    ViewData["Title"] = Model.CurrentVacancy.Name;
 }
 
 <header>
@@ -39,7 +39,7 @@
                     vacType = "Практика";
                 }
 
-                <div class="vac">
+                <div class="vac-current">
                     <div class="name-price">
                         <span class="name">@vac.Name</span>
                         <span class="price">@price</span>
@@ -48,12 +48,15 @@
                         <a href="#">@vac.Organization</a>
                     </div>
                     <div class="loc">
+                        <span>@vac.Address</span>
+                    </div>
+                    <div class="loc">
                         <span>@vac.Locality</span>
                     </div>
                     <p class="descr">
                         @vac.Description
                     </p>
-                    <span class="badge badge-info">@vacType</span>
+                    <button type="button" class="btn btn-primary">Откликнуться</button>
                 </div>
             }
         </div>

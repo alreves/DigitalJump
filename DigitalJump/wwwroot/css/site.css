@@ -327,6 +327,58 @@ html {
                 line-height: 1.2;
             }
 
+        .body .vacs .vac-current {
+        }
+
+            .body .vacs .vac-current .name-price {
+                font-size: 0;
+                margin-bottom: 10px;
+            }
+
+                .body .vacs .vac-current .name-price .name {
+                    display: inline-block;
+                    width: 80%;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: #28a745;
+                    text-decoration: none !important;
+                }
+
+
+                .body .vacs .vac-current .name-price .price {
+                    display: inline-block;
+                    width: 20%;
+                    font-size: 30px;
+                    font-weight: bold;
+                    text-align: right;
+                    color: grey;
+                }
+
+            .body .vacs .vac-current .org {
+            }
+
+                .body .vacs .vac-current .org a {
+                    color: grey;
+                    font-size: 14px;
+                    text-decoration: none !important;
+                }
+
+                    .body .vacs .vac-current .org a:hover {
+                        color: #d23c3c;
+                    }
+
+            .body .vacs .vac-current .loc {
+            }
+
+                .body .vacs .vac-current .loc span {
+                    color: grey;
+                    font-size: 16px;
+                }
+
+            .body .vacs .vac-current .descr {
+                margin-top: 12px;
+            }
+
 body {
     margin-bottom: 60px;
 }
